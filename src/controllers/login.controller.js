@@ -1,3 +1,5 @@
+import { loginService } from "../services/login.services.js"
+
 export const login = async(req, res) => {
     res.render("login.handlebars")
 }
@@ -8,8 +10,8 @@ export const loginPost = async(req, res) => {
     let user = {email, password}
     console.log(user)
     if(user) {
-        await login(user.email, user.password)
-        res.send(user)
+        await loginService(user.email, user.password)
+        res.redirect("index")
     } else {
         res.send("Faltan campos por completar")
     }

@@ -1,6 +1,6 @@
-import { save } from "../persistance/pesistanceSelector"
+import { save } from "../persistance/pesistanceSelector.js"
 
-export async function login(email, password) {
+export async function loginService(email, password) {
     const user = {email, password}
     const obj = {
         user,
